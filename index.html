@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <title>HSInstagram by hsandhu</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>HSInstagram</h1>
+        <h2>Instagram Photo Viewer for iOS</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/hsandhu/HSInstagram/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/hsandhu/HSInstagram/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/hsandhu/HSInstagram" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h3>Overview</h3>
+
+<p>This repository provides a starting point to build an application based on the Instagram platform. In addition to the Instagram API model, the repository includes a sample iOS project.</p>
+
+<pre><code>$ git clone git@github.com:hsandhu/HSInstagram.git
+</code></pre>
+
+<h3>Requirements</h3>
+
+<p>iOS 5 with ARC enabled</p>
+
+<h3>Dependencies</h3>
+
+<p>AFNetworking (included)</p>
+
+<h3>Installation</h3>
+
+<p>Simply copy the /Vendor/HSInstagram source files from the sample project into your XCode project</p>
+
+<h3>Sample usage</h3>
+
+<p>Retrieving images for a specific location:</p>
+
+<pre><code>CLLocationCoordinate2D coord = self.locationService.currentLocation.coordinate; 
+</code></pre>
+
+<pre><code>[HSInstagramLocation getLocationsWithCoord:coord block:^(NSArray *records) { 
+    self.locations = records; [self.tableView reloadData]; 
+}];
+</code></pre>
+      </section>
+    </div>
+
+    
+  </body>
+</html>
