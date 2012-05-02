@@ -11,3 +11,6 @@ Snapshots
 
 # osx noise
 .DS_Store
+
+# emacs and vim temp files
+*~
