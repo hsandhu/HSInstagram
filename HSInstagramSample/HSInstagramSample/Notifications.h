@@ -13,5 +13,6 @@
 extern NSString* const kNewLocationNotification;
 extern NSString* const kInstagramLocationsNotification;
 extern NSString* const kInstagramMediaNotification;
+extern NSString* const kInstagramAuthNotification;
 
 @end

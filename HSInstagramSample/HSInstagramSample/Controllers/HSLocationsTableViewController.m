@@ -10,6 +10,7 @@
 #import "HSLocationService.h"
 #import "HSInstagramLocation.h"
 #import "HSMediaGridViewController.h"
+#import "HSMyMediaViewController.h"
 
 @implementation HSLocationsTableViewController
 
@@ -47,6 +48,10 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.navigationItem.title = @"locations";
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"My Photos" 
+                                                                              style:UIBarButtonItemStyleBordered 
+                                                                             target:self 
+                                                                             action:@selector(loginAction)];
 
     [[NSNotificationCenter defaultCenter] addObserverForName:kNewLocationNotification
                                                       object:nil 
@@ -175,6 +180,14 @@
     HSInstagramLocation* location = [self.locations objectAtIndex:indexPath.row];
     HSMediaGridViewController* grid = [[HSMediaGridViewController alloc] initWithLocationId:location.locationId];
     [self.navigationController pushViewController:grid animated:YES];
+}
+
+#pragma mark - Actions
+
+- (void)loginAction
+{
+    HSMyMediaViewController* media = [[HSMyMediaViewController alloc] init];
+    [self.navigationController pushViewController:media animated:YES];
 }
 
 @end

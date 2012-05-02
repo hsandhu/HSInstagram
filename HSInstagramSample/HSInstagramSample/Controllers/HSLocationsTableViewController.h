@@ -10,7 +10,7 @@
 
 @class HSLocationService;
 
-@interface HSLocationsTableViewController : UITableViewController
+@interface HSLocationsTableViewController : UITableViewController 
 
 @property (nonatomic, strong) HSLocationService* locationService;
 @property (nonatomic, strong) NSArray* locations;

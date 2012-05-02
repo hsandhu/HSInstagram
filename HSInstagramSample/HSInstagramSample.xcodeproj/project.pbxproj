@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F835D79E15509A840041404D /* HSMyMediaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F835D79D15509A840041404D /* HSMyMediaViewController.m */; };
 		F8402EF414CA8FB6000D3F64 /* HSLocationService.m in Sources */ = {isa = PBXBuildFile; fileRef = F8402EF314CA8FB6000D3F64 /* HSLocationService.m */; };
 		F8402EFA14CA90B2000D3F64 /* Notifications.m in Sources */ = {isa = PBXBuildFile; fileRef = F8402EF914CA90B1000D3F64 /* Notifications.m */; };
 		F8402EFC14CA90FC000D3F64 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8402EFB14CA90FC000D3F64 /* CoreLocation.framework */; };
@@ -20,6 +21,7 @@
 		F85E081314C9552900D05107 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F85E081114C9552900D05107 /* InfoPlist.strings */; };
 		F85E081514C9552900D05107 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F85E081414C9552900D05107 /* main.m */; };
 		F85E081914C9552900D05107 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F85E081814C9552900D05107 /* AppDelegate.m */; };
+		F87CAFE51550BD1F00547D4D /* HSInstagramUserMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = F87CAFE41550BD1F00547D4D /* HSInstagramUserMedia.m */; };
 		F88E402514C9641D005B41C7 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F88E400A14C9641D005B41C7 /* AFHTTPClient.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F88E402614C9641D005B41C7 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F88E400C14C9641D005B41C7 /* AFHTTPRequestOperation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		F88E402714C9641D005B41C7 /* AFImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = F88E400E14C9641D005B41C7 /* AFImageCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -35,6 +37,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F835D79C15509A840041404D /* HSMyMediaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSMyMediaViewController.h; sourceTree = "<group>"; };
+		F835D79D15509A840041404D /* HSMyMediaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSMyMediaViewController.m; sourceTree = "<group>"; };
 		F8402EF214CA8FB6000D3F64 /* HSLocationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSLocationService.h; sourceTree = "<group>"; };
 		F8402EF314CA8FB6000D3F64 /* HSLocationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSLocationService.m; sourceTree = "<group>"; };
 		F8402EF814CA90B1000D3F64 /* Notifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notifications.h; sourceTree = "<group>"; };
@@ -58,6 +62,8 @@
 		F85E081614C9552900D05107 /* HSInstagramSample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HSInstagramSample-Prefix.pch"; sourceTree = "<group>"; };
 		F85E081714C9552900D05107 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F85E081814C9552900D05107 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F87CAFE31550BD1F00547D4D /* HSInstagramUserMedia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSInstagramUserMedia.h; sourceTree = "<group>"; };
+		F87CAFE41550BD1F00547D4D /* HSInstagramUserMedia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSInstagramUserMedia.m; sourceTree = "<group>"; };
 		F88E400914C9641D005B41C7 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
 		F88E400A14C9641D005B41C7 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
 		F88E400B14C9641D005B41C7 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -219,6 +225,8 @@
 				F88E402414C9641D005B41C7 /* HSInstagramLocation.m */,
 				F8402F0014CA9B14000D3F64 /* HSInstagramLocationMedia.h */,
 				F8402F0114CA9B14000D3F64 /* HSInstagramLocationMedia.m */,
+				F87CAFE31550BD1F00547D4D /* HSInstagramUserMedia.h */,
+				F87CAFE41550BD1F00547D4D /* HSInstagramUserMedia.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -232,6 +240,8 @@
 				F8402F0414CAAF15000D3F64 /* HSMediaGridViewController.m */,
 				F8402F0614CB5505000D3F64 /* HSImageViewController.h */,
 				F8402F0714CB5505000D3F64 /* HSImageViewController.m */,
+				F835D79C15509A840041404D /* HSMyMediaViewController.h */,
+				F835D79D15509A840041404D /* HSMyMediaViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -262,7 +272,7 @@
 		F85E07FB14C9552900D05107 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0430;
 				ORGANIZATIONNAME = Pushbits;
 			};
 			buildConfigurationList = F85E07FE14C9552900D05107 /* Build configuration list for PBXProject "HSInstagramSample" */;
@@ -318,6 +328,8 @@
 				F8402F0214CA9B14000D3F64 /* HSInstagramLocationMedia.m in Sources */,
 				F8402F0514CAAF15000D3F64 /* HSMediaGridViewController.m in Sources */,
 				F8402F0814CB5505000D3F64 /* HSImageViewController.m in Sources */,
+				F835D79E15509A840041404D /* HSMyMediaViewController.m in Sources */,
+				F87CAFE51550BD1F00547D4D /* HSInstagramUserMedia.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

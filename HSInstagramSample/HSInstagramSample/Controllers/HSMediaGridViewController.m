@@ -10,9 +10,9 @@
 #import "HSInstagramLocationMedia.h"
 #import "HSImageViewController.h"
 
-const NSInteger kthumbnailWidth = 80;
-const NSInteger kthumbnailHeight = 80;
-const NSInteger kImagesPerRow = 4;
+const NSInteger klocationThumbnailWidth = 80;
+const NSInteger klocationThumbnailHeight = 80;
+const NSInteger klocationImagesPerRow = 4;
 
 @interface HSMediaGridViewController (private)
 - (void)loadImages;
@@ -69,14 +69,14 @@ const NSInteger kImagesPerRow = 4;
         self.images = records;
         int item = 0, row = 0, col = 0;
         for (NSDictionary* image in records) {
-            UIButton* button = [[UIButton alloc] initWithFrame:CGRectMake(col*kthumbnailWidth,
-                                                                          row*kthumbnailHeight,
-                                                                          kthumbnailWidth,
-                                                                          kthumbnailHeight)];
+            UIButton* button = [[UIButton alloc] initWithFrame:CGRectMake(col*klocationThumbnailWidth,
+                                                                          row*klocationThumbnailHeight,
+                                                                          klocationThumbnailWidth,
+                                                                          klocationThumbnailHeight)];
             button.tag = item;
             [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
             ++col;++item;
-            if (col >= kImagesPerRow) {
+            if (col >= klocationImagesPerRow) {
                 row++;
                 col = 0;
             }

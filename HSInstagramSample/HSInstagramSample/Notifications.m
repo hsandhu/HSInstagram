@@ -13,5 +13,6 @@
 NSString* const kNewLocationNotification = @"NewLocationNotification";
 NSString* const kInstagramLocationsNotification = @"InstagramLocationsNotification";
 NSString* const kInstagramMediaNotification = @"InstagramMediaNotification";
+NSString* const kInstagramAuthNotification = @"InstagramAuthNotification";
 
 @end
