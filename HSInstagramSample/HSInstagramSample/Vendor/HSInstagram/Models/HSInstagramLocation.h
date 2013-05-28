@@ -16,6 +16,8 @@
 @property (nonatomic, strong) NSString* longitude;
 @property (nonatomic, strong) NSString* name;
 
-+ (void)getLocationsWithCoord:(CLLocationCoordinate2D)coord block:(void (^)(NSArray *records))block;
++ (void)getLocationsWithCoord:(CLLocationCoordinate2D)coord
+              withAccessToken:(NSString*)accessToken
+                        block:(void (^)(NSArray *records))block;
 
 @end

@@ -28,13 +28,21 @@
     return self;
 }
 
-+ (void)getLocationsWithCoord:(CLLocationCoordinate2D)coord block:(void (^)(NSArray *records))block
++ (void)getLocationsWithCoord:(CLLocationCoordinate2D)coord
+              withAccessToken:(NSString*)accessToken
+                        block:(void (^)(NSArray *records))block
 {
     NSString* lat = [NSString stringWithFormat:@"%3.7f", coord.latitude];
     NSString* lon = [NSString stringWithFormat:@"%3.7f", coord.longitude];
     
-    NSDictionary* params = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:lat, lon, kClientId, nil]
-                                                       forKeys:[NSArray arrayWithObjects:@"lat", @"lng", @"client_id", nil]];
+    NSDictionary* params = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:lat,
+                                                                lon,
+                                                                accessToken,
+                                                                nil]
+                                                       forKeys:[NSArray arrayWithObjects:@"lat",
+                                                                @"lng",
+                                                                @"access_token",
+                                                                nil]];
     
     [[HSInstagram sharedClient] getPath:kLocationsEndpoint
                              parameters:params

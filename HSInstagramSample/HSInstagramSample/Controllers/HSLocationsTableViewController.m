@@ -10,7 +10,6 @@
 #import "HSLocationService.h"
 #import "HSInstagramLocation.h"
 #import "HSMediaGridViewController.h"
-#import "HSMyMediaViewController.h"
 
 @implementation HSLocationsTableViewController
 
@@ -48,19 +47,21 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.navigationItem.title = @"locations";
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"My Photos" 
-                                                                              style:UIBarButtonItemStyleBordered 
-                                                                             target:self 
-                                                                             action:@selector(loginAction)];
+    
+    __weak HSLocationsTableViewController* weakSelf = self;
 
     [[NSNotificationCenter defaultCenter] addObserverForName:kNewLocationNotification
                                                       object:nil 
                                                        queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *notif) {
-        [self.locationService stop];
-        CLLocationCoordinate2D coord = self.locationService.currentLocation.coordinate;
-        [HSInstagramLocation getLocationsWithCoord:coord block:^(NSArray *records) {
-            self.locations = records;
-            [self.tableView reloadData];
+        [weakSelf.locationService stop];
+        CLLocationCoordinate2D coord = weakSelf.locationService.currentLocation.coordinate;
+        NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+                                                           
+        [HSInstagramLocation getLocationsWithCoord:coord
+                                   withAccessToken:[defaults objectForKey:kUserAccessTokenKey]
+                                             block:^(NSArray *records) {
+            weakSelf.locations = records;
+            [weakSelf.tableView reloadData];
         }];
     }];
 }
@@ -180,14 +181,6 @@
     HSInstagramLocation* location = [self.locations objectAtIndex:indexPath.row];
     HSMediaGridViewController* grid = [[HSMediaGridViewController alloc] initWithLocationId:location.locationId];
     [self.navigationController pushViewController:grid animated:YES];
-}
-
-#pragma mark - Actions
-
-- (void)loginAction
-{
-    HSMyMediaViewController* media = [[HSMyMediaViewController alloc] init];
-    [self.navigationController pushViewController:media animated:YES];
 }
 
 @end

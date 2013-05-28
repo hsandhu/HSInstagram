@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "HSLocationsTableViewController.h"
+#import "HSMyMediaViewController.h"
 
 @implementation AppDelegate
 
@@ -17,8 +17,8 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    HSLocationsTableViewController* locations = [[HSLocationsTableViewController alloc] initWithStyle:UITableViewStylePlain];
-    UINavigationController* navigation = [[UINavigationController alloc] initWithRootViewController:locations];
+    HSMyMediaViewController* controller = [[HSMyMediaViewController alloc] init];
+    UINavigationController* navigation = [[UINavigationController alloc] initWithRootViewController:controller];
     self.window.rootViewController = navigation;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

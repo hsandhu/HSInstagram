@@ -14,7 +14,9 @@
 @property (nonatomic, strong) NSString* standardUrl;
 @property (nonatomic, assign) NSUInteger likes;
 
-+ (void)getUserMediaWithId:(NSString*)userId withAccessToken:(NSString*)accessToken block:(void (^)(NSArray *records))block;
++ (void)getUserMediaWithId:(NSString*)userId
+           withAccessToken:(NSString*)accessToken
+                     block:(void (^)(NSArray *records))block;
 
 
 @end

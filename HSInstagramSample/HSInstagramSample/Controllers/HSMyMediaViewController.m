@@ -9,6 +9,7 @@
 #import "HSMyMediaViewController.h"
 #import "HSInstagramUserMedia.h"
 #import "HSImageViewController.h"
+#import "HSLocationsTableViewController.h"
 
 const NSInteger kthumbnailWidth = 80;
 const NSInteger kthumbnailHeight = 80;
@@ -102,6 +103,14 @@ const NSInteger kImagesPerRow = 4;
         self.accessToken = [params stringByReplacingOccurrencesOfString:@"access_token=" withString:@""];
         self.webView.hidden = YES;
         [self requestImages];
+        
+        NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:self.accessToken forKey:kUserAccessTokenKey];
+        [defaults synchronize];
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"locations"
+                                                                                  style:UIBarButtonItemStyleBordered
+                                                                                 target:self
+                                                                                 action:@selector(locationsAction:)];
     }
     
 	return YES;
@@ -160,6 +169,13 @@ const NSInteger kImagesPerRow = 4;
     UIButton* button = sender;
     HSImageViewController* img = [[HSImageViewController alloc] initWithMedia:[self.images objectAtIndex:button.tag]];
     [self.navigationController pushViewController:img animated:YES];
+}
+
+- (void)locationsAction:(id)sender
+{
+    HSLocationsTableViewController* controller =
+    [[HSLocationsTableViewController alloc] initWithStyle:UITableViewStylePlain];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 @end

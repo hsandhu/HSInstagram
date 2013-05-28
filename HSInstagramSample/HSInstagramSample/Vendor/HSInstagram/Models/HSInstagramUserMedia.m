@@ -25,7 +25,9 @@
     return self;
 }
 
-+ (void)getUserMediaWithId:(NSString*)userId withAccessToken:(NSString *)accessToken block:(void (^)(NSArray *records))block
++ (void)getUserMediaWithId:(NSString*)userId
+           withAccessToken:(NSString *)accessToken
+                     block:(void (^)(NSArray *records))block
 {
     NSDictionary* params = [NSDictionary dictionaryWithObject:accessToken forKey:@"access_token"];
     NSString* path = [NSString stringWithFormat:kUserMediaRecentEndpoint, userId];

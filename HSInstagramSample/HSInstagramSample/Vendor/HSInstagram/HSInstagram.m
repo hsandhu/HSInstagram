@@ -13,8 +13,10 @@
 NSString * const kInstagramBaseURLString = @"https://api.instagram.com/v1/";
 #warning Include your client id from instagr.am
 NSString * const kClientId = @"INSTAGRAM-CLIENT-KEY";
+
 #warning Include your redirect uri
 NSString * const kRedirectUrl = @"http://example.com";
+
 
 // Endpoints
 NSString * const kLocationsEndpoint = @"locations/search";
