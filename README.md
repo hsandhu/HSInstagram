@@ -19,7 +19,7 @@ Simply copy the /Vendor/HSInstagram source files from the sample project into yo
 
 Retrieving images for a specific location:
 
-CLLocationCoordinate2D coord = self.locationService.currentLocation.coordinate;
+        CLLocationCoordinate2D coord = self.locationService.currentLocation.coordinate;
         [HSInstagramLocation getLocationsWithCoord:coord block:^(NSArray *records) {
             self.locations = records;
             [self.tableView reloadData];
